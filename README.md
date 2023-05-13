@@ -1,0 +1,5 @@
+This Django project consists of six main models: Autor, Bydliste, Ctenar, Exemplar, Kniha, and Nakladatelstvi. 
+
+The Autor model represents authors and includes fields for their name, email, bio, date of birth, and date of death. The Bydliste model represents places of residence and includes fields for the street name, city, and postal code. The Ctenar model represents readers and includes fields for their name, email, place of residence (linked to Bydliste), and phone number. 
+
+The Exemplar model represents individual copies of books and includes fields for their price, ISBN, and the book they belong to (linked to the Kniha model). The Kniha model represents books and includes fields for their ISBN, title, number of pages, contents, and publisher (linked to the Nakladatelstvi model). Finally, the Nakladatelstvi model represents publishers and includes a field for their name.
