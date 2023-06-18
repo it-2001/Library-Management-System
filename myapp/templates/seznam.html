@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-lg-8 mt-3 mb-3">
+            <h2 class="bg-info text-light text-center text-uppercase p-3">Kompletní seznam knih</h2>
+            {% for kniha in knihy %}
+            <div class="row mb-3">
+                <div class="col-lg-9">
+                    <p>{% for autor in kniha.autori.all %}<span class="badge badge-light">{{ autor.jmeno }} {{ autor.prijmeni }}</span>{% endfor %}</p>
+                    <h3><a href="{% url "kniha" kniha.id %}">{{ kniha.titul }}</a></h3>
+                    <p>{{ kniha.obsah|truncatewords:30 }}</p>
+                    <p class="alert alert-secondary">Vydáno: {{ kniha.nakladatelstvi.nazev }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="col-lg-4 bg-light mt-3 mb-3">
+            <h2 class="bg-secondary text-light text-center p-3">Autoři</h2>
+            <ul class="list-group">
+            {% for autor in autory %}
+                <li class="list-group-item active">{{ autor.jmeno }} {{ autor.prijmeni }}</li>
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}

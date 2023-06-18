@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ kniha }}{% endblock %}
+
+{% block content %}
+    <h2>
+        {{ kniha.titul }}
+    </h2>
+    <div class="row">
+        <div class="col-md-4">
+            <p>Vydavatelství: {{ kniha.nakladatelstvi }}</p>
+            <p>Počet stran: {{ kniha.strany }}</p>
+            <p>ISBN: {{ kniha.isbn }}</p>
+            <hr>
+        </div>
+        <div class="col-md-8">
+            <h3>Obsah knihy</h3>
+            <div>{{ kniha.obsah }}</div>
+        </div>
+    </div>
+{% endblock %}
